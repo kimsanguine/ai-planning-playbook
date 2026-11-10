@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">고객의 문제에서 다음 결정까지, 나의 기획 방법론</title>
+  <desc id="desc">목표와 제약을 정하고 시장조사, 문제정의, 기능설계, 검증, 수익화를 거칩니다. 네 문서에 근거와 선택을 남기고 7일 뒤 실제 결과로 다시 판단합니다.</desc>
+  <defs>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#E8E4DC"/></pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="5" orient="auto"><path d="M0 0 9 5 0 10" fill="none" stroke="#E07A5F" stroke-width="2"/></marker>
+  </defs>
+  <rect width="1600" height="1000" rx="30" fill="#FAF9F6"/>
+  <rect width="1600" height="1000" rx="30" fill="url(#dots)"/>
+  <g font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" fill="#1A1A1A">
+    <rect x="80" y="52" width="290" height="44" rx="12" fill="#E8E4DC"/>
+    <text x="102" y="82" font-size="23" font-weight="700" fill="#E07A5F">김생근의 기획 방법론</text>
+    <text x="80" y="165" font-size="54" font-weight="750">고객의 문제에서, 다음 결정까지</text>
+    <text x="82" y="216" font-size="27" fill="#6B6B6B">질문으로 좁히고, 근거로 고르고, 선택한 이유를 남깁니다.</text>
+    <rect x="80" y="258" width="1440" height="74" rx="20" fill="#FAF9F6" stroke="#E8E4DC"/>
+    <text x="108" y="305" font-size="26" font-weight="650" fill="#1A1A1A">시작에서 정할 것: 바꿀 결과, 고객과 사업의 목표, 시간과 비용, 실패할 때의 영향</text>
+    <g transform="translate(80 385)">
+      <rect x="0" y="8" width="256" height="226" rx="22" fill="#E8E4DC" opacity=".32"/>
+      <rect width="256" height="226" rx="22" fill="#FAF9F6" stroke="#E8E4DC"/>
+      <rect x="84" y="-12" width="86" height="25" fill="#E8E4DC" opacity=".8" transform="rotate(-3 126 0)"/>
+      <text x="24" y="48" font-size="22" font-weight="700" fill="#E07A5F">01</text>
+      <text x="24" y="95" font-size="34" font-weight="700">시장조사</text>
+      <text x="24" y="149" font-size="24">지금은 무엇으로</text><text x="24" y="185" font-size="24">버티고 있을까?</text>
+    </g>
+    <path d="M347 498 H365" stroke="#E07A5F" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(376 385)">
+      <rect width="256" height="226" rx="22" fill="#FAF9F6" stroke="#E8E4DC"/>
+      <text x="24" y="48" font-size="22" font-weight="700" fill="#E07A5F">02</text>
+      <text x="24" y="95" font-size="34" font-weight="700">문제정의</text>
+      <text x="24" y="149" font-size="24">기능 요청 뒤에</text><text x="24" y="185" font-size="24">어떤 일이 있을까?</text>
+    </g>
+    <path d="M643 498 H661" stroke="#E07A5F" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(672 385)">
+      <rect width="256" height="226" rx="22" fill="#ffffff" stroke="#E8E4DC"/>
+      <text x="24" y="48" font-size="22" font-weight="700" fill="#E07A5F">03</text>
+      <text x="24" y="95" font-size="34" font-weight="700">기능설계</text>
+      <text x="24" y="149" font-size="24">무엇을 만들고</text><text x="24" y="185" font-size="24">무엇을 포기할까?</text>
+    </g>
+    <path d="M939 498 H957" stroke="#E07A5F" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(968 385)">
+      <rect width="256" height="226" rx="22" fill="#FAF9F6" stroke="#E8E4DC"/>
+      <text x="24" y="48" font-size="22" font-weight="700" fill="#6B6B6B">04</text>
+      <text x="24" y="95" font-size="34" font-weight="700">검증 GATE</text>
+      <text x="24" y="149" font-size="24">어떤 근거가 있어야</text><text x="24" y="185" font-size="24">시작해도 될까?</text>
+    </g>
+    <path d="M1235 498 H1253" stroke="#E07A5F" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(1264 385)">
+      <rect width="256" height="226" rx="22" fill="#FAF9F6" stroke="#E8E4DC"/>
+      <text x="24" y="48" font-size="22" font-weight="700" fill="#E07A5F">05</text>
+      <text x="24" y="95" font-size="34" font-weight="700">수익화</text>
+      <text x="24" y="149" font-size="24">계속 선택받으며</text><text x="24" y="185" font-size="24">운영할 수 있을까?</text>
+    </g>
+    <path d="M1392 634 V680 H208 V634" fill="none" stroke="#E07A5F" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="495" y="653" width="610" height="52" rx="16" fill="#FAF9F6"/>
+    <text x="520" y="688" font-size="25" font-weight="650" fill="#E07A5F">7일 뒤 실제 관찰을 보고, 다음 선택을 정합니다</text>
+    <rect x="80" y="754" width="1440" height="160" rx="24" fill="#ffffff" stroke="#E8E4DC"/>
+    <g font-size="25" font-weight="700" fill="#E07A5F">
+      <text x="110" y="804">customer.md</text><text x="462" y="804">prd.md</text><text x="814" y="804">architecture.md</text><text x="1166" y="804">progress.md</text>
+    </g>
+    <g font-size="23" fill="#6B6B6B">
+      <text x="110" y="852">고객의 불편과 기대</text><text x="110" y="886">현재 대안과 근거</text>
+      <text x="462" y="852">선택한 범위와 목표</text><text x="462" y="886">품질 기준의 정본</text>
+      <text x="814" y="852">처리와 개발 구조</text><text x="814" y="886">사람의 검토와 복구</text>
+      <text x="1166" y="852">선택한 이유와 포기</text><text x="1166" y="886">실제 결과와 재판단</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,339 @@
+{
+  "title": "AI를 쓰는 기획자의 판단법",
+  "pdf_pages": [
+    {
+      "page": 1,
+      "slug": "one-real-decision",
+      "spare_points": 210.0,
+      "scale": 1.0,
+      "text_chars": 935
+    },
+    {
+      "page": 2,
+      "slug": "diagnose-the-block",
+      "spare_points": 198.2,
+      "scale": 1.0,
+      "text_chars": 848
+    },
+    {
+      "page": 3,
+      "slug": "eight-principles",
+      "spare_points": 140.0,
+      "scale": 1.0,
+      "text_chars": 811
+    },
+    {
+      "page": 4,
+      "slug": "five-stage-loop",
+      "spare_points": 64.5,
+      "scale": 1.0,
+      "text_chars": 859
+    },
+    {
+      "page": 5,
+      "slug": "four-files",
+      "spare_points": 187.5,
+      "scale": 1.0,
+      "text_chars": 922
+    },
+    {
+      "page": 6,
+      "slug": "recent-event",
+      "spare_points": 40.2,
+      "scale": 1.0,
+      "text_chars": 918
+    },
+    {
+      "page": 7,
+      "slug": "alternatives",
+      "spare_points": 43.2,
+      "scale": 1.0,
+      "text_chars": 843
+    },
+    {
+      "page": 8,
+      "slug": "case-request",
+      "spare_points": 130.7,
+      "scale": 1.0,
+      "text_chars": 924
+    },
+    {
+      "page": 9,
+      "slug": "role-and-problem",
+      "spare_points": 43.2,
+      "scale": 1.0,
+      "text_chars": 950
+    },
+    {
+      "page": 10,
+      "slug": "weakest-assumption",
+      "spare_points": 20.7,
+      "scale": 1.0,
+      "text_chars": 919
+    },
+    {
+      "page": 11,
+      "slug": "dual-value",
+      "spare_points": 130.7,
+      "scale": 1.0,
+      "text_chars": 894
+    },
+    {
+      "page": 12,
+      "slug": "remove-standardize-rules-ai",
+      "spare_points": 25.0,
+      "scale": 1.0,
+      "text_chars": 890
+    },
+    {
+      "page": 13,
+      "slug": "quality-source",
+      "spare_points": 20.7,
+      "scale": 1.0,
+      "text_chars": 898
+    },
+    {
+      "page": 14,
+      "slug": "architecture-hitl",
+      "spare_points": 17.7,
+      "scale": 1.0,
+      "text_chars": 997
+    },
+    {
+      "page": 15,
+      "slug": "review-lenses",
+      "spare_points": 141.9,
+      "scale": 1.0,
+      "text_chars": 855
+    },
+    {
+      "page": 16,
+      "slug": "interview-and-peer",
+      "spare_points": 59.7,
+      "scale": 1.0,
+      "text_chars": 900
+    },
+    {
+      "page": 17,
+      "slug": "smallest-test",
+      "spare_points": 20.7,
+      "scale": 1.0,
+      "text_chars": 938
+    },
+    {
+      "page": 18,
+      "slug": "case-cost",
+      "spare_points": 141.9,
+      "scale": 1.0,
+      "text_chars": 893
+    },
+    {
+      "page": 19,
+      "slug": "economics",
+      "spare_points": 43.2,
+      "scale": 1.0,
+      "text_chars": 916
+    },
+    {
+      "page": 20,
+      "slug": "seven-day-plan",
+      "spare_points": 43.2,
+      "scale": 1.0,
+      "text_chars": 925
+    },
+    {
+      "page": 21,
+      "slug": "case-ux",
+      "spare_points": 141.9,
+      "scale": 1.0,
+      "text_chars": 852
+    },
+    {
+      "page": 22,
+      "slug": "fill-and-merge",
+      "spare_points": 119.4,
+      "scale": 1.0,
+      "text_chars": 964
+    },
+    {
+      "page": 23,
+      "slug": "filled-example",
+      "spare_points": 153.2,
+      "scale": 1.0,
+      "text_chars": 906
+    },
+    {
+      "page": 24,
+      "slug": "own-work",
+      "spare_points": 119.4,
+      "scale": 1.0,
+      "text_chars": 874
+    },
+    {
+      "page": 25,
+      "slug": "hplan-bridge",
+      "spare_points": 175.7,
+      "scale": 1.0,
+      "text_chars": 878
+    },
+    {
+      "page": 26,
+      "slug": "reuse-new-chat",
+      "spare_points": 175.7,
+      "scale": 1.0,
+      "text_chars": 871
+    },
+    {
+      "page": 27,
+      "slug": "decision-review",
+      "spare_points": 96.9,
+      "scale": 1.0,
+      "text_chars": 927
+    },
+    {
+      "page": 28,
+      "slug": "sources-and-next",
+      "spare_points": 71.7,
+      "scale": 1.0,
+      "text_chars": 993
+    }
+  ],
+  "files": {
+    ".gitattributes": {
+      "bytes": 85,
+      "sha256": "c9af92d42f5e04036a04db21770097ec497ce54223efb3027fdd902c8fae5735"
+    },
+    ".github/workflows/validate.yml": {
+      "bytes": 442,
+      "sha256": "03cc90a614393d5b7372c319e7933614ac874965441c29232f9d7ba420c4a542"
+    },
+    ".gitignore": {
+      "bytes": 36,
+      "sha256": "f1bb8745e827993437963d477a5ee256ca6a098946da514125ce8c0373fc0b51"
+    },
+    "CHANGELOG.md": {
+      "bytes": 608,
+      "sha256": "73489e9170b486a633e4a7af3ce5df97c9bba835bccb3056ae1314a021f5c93b"
+    },
+    "CONTRIBUTING.md": {
+      "bytes": 1920,
+      "sha256": "9ab831befb2a4bf5ac22357aefc3c0d22429657699e7adbea3c1aa6ade957250"
+    },
+    "LICENSE": {
+      "bytes": 1578,
+      "sha256": "50991f33db42980c32a210506422b61ae2813fbee2de3cd4674068c33fa5f3f1"
+    },
+    "README.md": {
+      "bytes": 7198,
+      "sha256": "0c91db4be5d9f3d62ebc545926752ea9b1de56c07c43991b1616ef63a5350f36"
+    },
+    "assets/fonts/OFL.txt": {
+      "bytes": 4816,
+      "sha256": "82e9c8a4b203261f10ddba1296422d64914ff3d4b7bd8a12896d03f0f088d70a"
+    },
+    "assets/fonts/PretendardVariable.ttf": {
+      "bytes": 6739336,
+      "sha256": "3090ccde0442bb347aa7685d9ba8b17436a60682df6e8f92a9a670de14056e22"
+    },
+    "assets/fonts/README.md": {
+      "bytes": 597,
+      "sha256": "2644d5d058c692f74a899a6d4349f4655ac4ed2a8c49fe087fc1edacd5e5d5f6"
+    },
+    "assets/planning-method.svg": {
+      "bytes": 5574,
+      "sha256": "f035a6a4d54c3f99c262ab38b353926287d2c04f16d2b1184cc1219c3f368900"
+    },
+    "assets/thinking-flow.svg": {
+      "bytes": 4183,
+      "sha256": "414aa5aa9e29480186cadf14fb581ccb98710b1ec2216d89ef5a363730121c2d"
+    },
+    "cases/01-request-to-problem.md": {
+      "bytes": 5409,
+      "sha256": "a0f01bbb040d4716772b4bb8b5bddd6bc0a48609e6926abb6af8a1661e5feab6"
+    },
+    "cases/02-quality-and-cost.md": {
+      "bytes": 11254,
+      "sha256": "5c35d6a00a0f1478849ac8a82415eefd73431a54d057b343a927f5b01e36e14c"
+    },
+    "cases/03-ux-priorities.md": {
+      "bytes": 5026,
+      "sha256": "ab3fc6354272aaa3d2dd1673ae34341b19cc9340f9df36b4775c81c8206558c5"
+    },
+    "docs/decision-checklist.md": {
+      "bytes": 2730,
+      "sha256": "f6d2399d917f8169adbe21633c4cbd88e1bc2db121c8292dfe5559e9b4fdcfc3"
+    },
+    "docs/hplan-guide.md": {
+      "bytes": 3870,
+      "sha256": "5f01fd9759f6f66010e212e2f8109d71357ba18bf199c7d6f0c6dd23a01e628a"
+    },
+    "docs/instruction-practice.md": {
+      "bytes": 36215,
+      "sha256": "e3f782d72bb513ce758db0e37162e4ef3f700a15d29d7f148e3c9bac57d59eaf"
+    },
+    "docs/planner-scope-appendix.md": {
+      "bytes": 14022,
+      "sha256": "311de918c6ceaf849fc5682182ac3e095dfb1e55e9f6cacbb4c9b7ea5b6e8bd6"
+    },
+    "docs/planner-thinking-method.md": {
+      "bytes": 4704,
+      "sha256": "c00b064d243faf198866613f8ab96746672908dfd43bf245f67824044eb8a24f"
+    },
+    "examples/video-localization/architecture.md": {
+      "bytes": 3599,
+      "sha256": "cd7ed76c68813437b29aa0907e8213f74eb71256e39ffbe5f203eacbf92a3a67"
+    },
+    "examples/video-localization/customer.md": {
+      "bytes": 3259,
+      "sha256": "fa967d4954a8791ca958a1891284468ab46650a255f02a79bcda4235c0379136"
+    },
+    "examples/video-localization/prd.md": {
+      "bytes": 4141,
+      "sha256": "a9b3114ff680234842c59327da265a688a89349e382049a1bec1d8fed3d207f4"
+    },
+    "examples/video-localization/progress.md": {
+      "bytes": 4158,
+      "sha256": "97e7486de99a4396bc44c69af3a8d67467c84abbfd9f257b5829c009e190d0cc"
+    },
+    "manuscript/README.md": {
+      "bytes": 55140,
+      "sha256": "26db003b6c2391671cf804ace28c602d5d3c4465c38f493923546a686fbfe56d"
+    },
+    "requirements.txt": {
+      "bytes": 33,
+      "sha256": "1696c3d02022de94859edeb3e3424ad524c5e3271f268cdfa967922acc9e8325"
+    },
+    "scripts/build.py": {
+      "bytes": 9642,
+      "sha256": "01ea42ae7c4f7a6dea4ccb51e361588cf115990cacc113389ba1301fe1f65747"
+    },
+    "scripts/validate.py": {
+      "bytes": 5491,
+      "sha256": "12d3f33c360a288367706bb823b87034c76b941dcb24596beb7801a6a1e8caa4"
+    },
+    "templates/architecture.md": {
+      "bytes": 2656,
+      "sha256": "81dcc32dc1b30ee00a26b3832467e2755fcc5b08e8ee7cfc6b17689c6652e135"
+    },
+    "templates/customer.md": {
+      "bytes": 3036,
+      "sha256": "8f9f3c5e702245f719da61fc4e00716b2514de2ab9a7257995289a6e4e8c4aea"
+    },
+    "templates/prd.md": {
+      "bytes": 2910,
+      "sha256": "13d52b7c07fdfcf31371453ee1f56303666f98a7c8f6ff0922e759f6d37e017a"
+    },
+    "templates/progress.md": {
+      "bytes": 4416,
+      "sha256": "56a86902ea11fcfd23b4a3941ce394603dd11b2dae2e55a00c6c77af56715f1c"
+    },
+    "dist/handbook.pdf": {
+      "bytes": 3085900,
+      "sha256": "79b0c41a2ab890a79e7e450746ef6db0c7373532cf35cada880c84e193d6d977"
+    },
+    "dist/chapters.json": {
+      "bytes": 62383,
+      "sha256": "fe67afa273c4e83eea6dac4571e4a6b635bb380905b1f2d06cf67a99589a1982"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">기획자의 판단을 AI의 일하는 방식으로</title>
+  <desc id="desc">경험에서 조건과 이유를 꺼내 AI 작업 지시로 바꾸고, 반례를 검토해 다음 업무에 재사용합니다.</desc>
+  <defs>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#e4ddf4"/></pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="5" orient="auto"><path d="M0 0 9 5 0 10" fill="none" stroke="#6b50ce" stroke-width="2"/></marker>
+  </defs>
+  <rect width="1600" height="900" rx="30" fill="#faf8ff"/>
+  <rect width="1600" height="900" rx="30" fill="url(#dots)"/>
+  <g font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" fill="#343051">
+    <rect x="86" y="65" width="224" height="42" rx="12" fill="#e4daf3"/>
+    <text x="111" y="94" font-size="22" font-weight="700" fill="#5940a0">기획자의 프롬프트</text>
+    <text x="86" y="179" font-size="54" font-weight="750">내 판단을 AI의 일하는 방식으로</text>
+    <text x="88" y="228" font-size="26" fill="#716b89">무엇을 시킬지와 함께, 왜 판단하고 언제 다시 물을지 적습니다.</text>
+    <g transform="translate(86 304)">
+      <rect x="0" y="7" width="334" height="333" rx="24" fill="#e7d8b0" opacity=".35"/>
+      <rect width="334" height="333" rx="24" fill="#fff8e7" stroke="#dfc69d"/>
+      <rect x="116" y="-12" width="100" height="26" fill="#c5b4e5" opacity=".8" transform="rotate(-3 166 0)"/>
+      <text x="28" y="58" font-size="22" font-weight="700" fill="#8a683e">01 · 내 경험</text>
+      <text x="28" y="112" font-size="33" font-weight="700">왜 그렇게 골랐나</text>
+      <text x="28" y="169" font-size="25">실제로 한 선택과 이유</text>
+      <text x="28" y="215" font-size="25">확인한 근거와 빈칸</text>
+      <text x="28" y="281" font-size="23" fill="#725230">사실과 가설을 나눕니다</text>
+    </g>
+    <path d="M434 470 H485" stroke="#6b50ce" stroke-width="4" marker-end="url(#arrow)"/>
+    <g transform="translate(510 304)">
+      <rect width="334" height="333" rx="24" fill="#f0ebfb" stroke="#cdbdf0"/>
+      <text x="28" y="58" font-size="22" font-weight="700" fill="#63499f">02 · 조건과 지시</text>
+      <text x="28" y="112" font-size="33" font-weight="700">언제 다르게 할까</text>
+      <text x="28" y="169" font-size="25">적용할 때와 멈출 때</text>
+      <text x="28" y="215" font-size="25">AI의 일과 사람의 결정</text>
+      <text x="28" y="281" font-size="23" fill="#5940a0">조건을 행동으로 옮깁니다</text>
+    </g>
+    <path d="M858 470 H909" stroke="#6b50ce" stroke-width="4" marker-end="url(#arrow)"/>
+    <g transform="translate(934 304)">
+      <rect width="580" height="333" rx="24" fill="#eef7ef" stroke="#d9e8dc"/>
+      <text x="28" y="58" font-size="22" font-weight="700" fill="#426c50">03 · 반례와 재사용</text>
+      <text x="28" y="112" font-size="33" font-weight="700">다른 입력에서도 같은 이유로</text>
+      <text x="28" y="169" font-size="25">근거 없음 · 이전 결정과 충돌 · 자료 실패</text>
+      <text x="28" y="215" font-size="25">기대와 실제를 비교하고 내가 수정</text>
+      <text x="28" y="281" font-size="23" fill="#426c50">새 대화에 기준과 새 자료를 전달합니다</text>
+    </g>
+    <rect x="86" y="701" width="1428" height="113" rx="22" fill="#ffffff" stroke="#e4dbf2"/>
+    <text x="116" y="744" font-size="23" font-weight="700" fill="#63499f">내기획프롬프트.md</text>
+    <text x="116" y="782" font-size="23" fill="#716b89">반복할 절차와 적용 조건</text>
+    <path d="M455 727 V790" stroke="#e4ddf4" stroke-width="2"/>
+    <text x="490" y="744" font-size="23" font-weight="700">customer.md  ·  prd.md  ·  architecture.md  ·  progress.md</text>
+    <text x="490" y="782" font-size="23" fill="#716b89">프로젝트의 근거, 확정 요구, 실행 책임, 실제 판단은 문서에 누적합니다.</text>
+  </g>
+</svg>
