@@ -204,8 +204,8 @@
       "sha256": "c9af92d42f5e04036a04db21770097ec497ce54223efb3027fdd902c8fae5735"
     },
     ".github/workflows/validate.yml": {
-      "bytes": 442,
-      "sha256": "03cc90a614393d5b7372c319e7933614ac874965441c29232f9d7ba420c4a542"
+      "bytes": 494,
+      "sha256": "7049375908b86e83e61a77d5ff80c438711d80c043e3cf9280d74afb13fc048c"
     },
     ".gitignore": {
       "bytes": 36,
@@ -304,12 +304,16 @@
       "sha256": "1696c3d02022de94859edeb3e3424ad524c5e3271f268cdfa967922acc9e8325"
     },
     "scripts/build.py": {
-      "bytes": 9642,
-      "sha256": "01ea42ae7c4f7a6dea4ccb51e361588cf115990cacc113389ba1301fe1f65747"
+      "bytes": 9498,
+      "sha256": "14d9478459596540468988f5cbe7309caeabda4122929f1b48f3f50e68602968"
+    },
+    "scripts/public_files.py": {
+      "bytes": 1420,
+      "sha256": "e2d418baa28f4fdc6850049e9b113546e2f906ce152702e49add08f3112de13b"
     },
     "scripts/validate.py": {
-      "bytes": 5491,
-      "sha256": "12d3f33c360a288367706bb823b87034c76b941dcb24596beb7801a6a1e8caa4"
+      "bytes": 5877,
+      "sha256": "3184548718a638f716eedaf9b70c19c34c6177ddfc24a8d11bcc63ae0480ec89"
     },
     "templates/architecture.md": {
       "bytes": 2656,

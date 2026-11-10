@@ -6,6 +6,8 @@ import hashlib
 import json
 import re
 
+from public_files import manifest_files, public_inputs
+
 ROOT = Path(__file__).resolve().parents[1]
 PROSE_SHA256 = '0529d3e9c1f97b7b892937f356da17306d39994bb3a04915ea978b04659ab125'
 PROMPTS_SHA256 = '49aaacc1f5b5797694ba8109dda7f18089c9d4e347441b9b3f500a57a8607579'
@@ -28,13 +30,11 @@ def validate(artifacts=False):
     if len(slugs) != 28 or len(set(slugs)) != 28:
         errors.append('Expected 28 distinct chapter slugs.')
     for folder in ['templates', 'examples/video-localization']:
-        if {p.name for p in (ROOT / folder).glob('*.md')} != {'customer.md', 'prd.md', 'architecture.md', 'progress.md'}:
+        if {p.name for p in public_inputs(ROOT) if p.parent == ROOT / folder and p.is_file()} != {'customer.md', 'prd.md', 'architecture.md', 'progress.md'}:
             errors.append(f'{folder}: expected exactly four project documents.')
-    md_files = sorted(ROOT.rglob('*.md'))
+    md_files = [p for p in public_inputs(ROOT) if p.suffix == '.md']
     count = 0
     for path in md_files:
-        if '.git' in path.parts:
-            continue
         content = path.read_text()
         name = str(path.relative_to(ROOT))
         if len(re.findall(r'^```', content, re.M)) % 2:
@@ -62,15 +62,19 @@ def validate(artifacts=False):
                 heading_ids = [re.sub(r'[^\w\s-]', '', h.lower()).replace(' ', '-') for h in re.findall(r'^#+ (.+)$', target_text, re.M)]
                 if unquote(url.fragment) not in explicit_ids + heading_ids:
                     errors.append(f'{name}: missing local anchor: {href}')
-    for ext in ('*.html', '*.zip'):
-        if any(ROOT.rglob(ext)):
-            errors.append(f'Unexpected legacy or nested artifact: {ext}')
+    for name in ('handbook.html', 'planning-method-kit.zip'):
+        if (ROOT / name).exists():
+            errors.append(f'Unexpected legacy artifact: {name}')
     if artifacts:
         import fitz
         manifest = json.loads((ROOT / 'dist/build-manifest.json').read_text())
-        for name, expected in manifest['files'].items():
+        expected_names = {str(p.relative_to(ROOT)) for p in manifest_files(ROOT)}
+        if set(manifest['files']) != expected_names:
+            errors.append('Build manifest file list differs from the public allowlist.')
+        for name in sorted(expected_names & set(manifest['files'])):
+            expected = manifest['files'][name]
             p = ROOT / name
-            if p.stat().st_size != expected['bytes'] or hashlib.sha256(p.read_bytes()).hexdigest() != expected['sha256']:
+            if not p.is_file() or p.stat().st_size != expected['bytes'] or hashlib.sha256(p.read_bytes()).hexdigest() != expected['sha256']:
                 errors.append(f'Build manifest does not match: {name}')
         chapters = json.loads((ROOT / 'dist/chapters.json').read_text())['chapters']
         if [c['slug'] for c in chapters] != slugs or [c['number'] for c in chapters] != list(range(1, 29)):

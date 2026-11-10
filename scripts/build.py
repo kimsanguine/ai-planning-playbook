@@ -10,6 +10,8 @@ from html.parser import HTMLParser
 import fitz
 import markdown
 
+from public_files import manifest_files
+
 ROOT = Path(__file__).resolve().parents[1]
 FONT = ROOT / "assets/fonts/PretendardVariable.ttf"
 DIST = ROOT / "dist"
@@ -147,6 +149,13 @@ def render_pdf(pages):
 
 
 
+def write_manifest(pdf_report):
+    manifest = {"title": TITLE, "pdf_pages": pdf_report, "files": {
+        str(p.relative_to(ROOT)): {"bytes": p.stat().st_size, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
+        for p in manifest_files(ROOT)}}
+    (DIST / "build-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
+
+
 def build():
     DIST.mkdir(exist_ok=True)
     manuscript = (ROOT / "manuscript/README.md").read_text()
@@ -156,12 +165,7 @@ def build():
         {"number": n, "slug": slug, "title": re.search(r"^# (.+)$", text, re.M).group(1), "html": md_to_html(text)}
         for n, (slug, text) in enumerate(pages, 1)]}
     (DIST / "chapters.json").write_text(json.dumps(chapters, ensure_ascii=False, indent=2) + "\n")
-    inputs = sorted(p for p in ROOT.rglob("*") if p.is_file() and ".git" not in p.parts and "__pycache__" not in p.parts and "dist" not in p.relative_to(ROOT).parts and p.name != ".DS_Store")
-    outputs = [DIST / "handbook.pdf", DIST / "chapters.json"]
-    manifest = {"title": TITLE, "pdf_pages": pdf_report, "files": {
-        str(p.relative_to(ROOT)): {"bytes": p.stat().st_size, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
-        for p in inputs + outputs}}
-    (DIST / "build-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
+    write_manifest(pdf_report)
     print(json.dumps({"pdf_pages": len(pages), "chapters": len(chapters["chapters"]), "minimum_spare_points": min(p["spare_points"] for p in pdf_report), "all_scale_one": all(p["scale"] == 1 for p in pdf_report)}, ensure_ascii=False))
 
 
