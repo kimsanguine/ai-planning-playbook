@@ -10,26 +10,39 @@
 
 ![고객의 문제에서 다음 결정까지 이어지는 기획 방법론](assets/planning-method.svg)
 
-## Q. AI 에이전트에 스킬을 어떻게 설치하나요?
+## Q. Claude Code·Codex·Hermes에 어떻게 설치하나요?
 
-GitHub Copilot 또는 호환 에이전트에서 GitHub CLI 2.90.0 이상을 쓴다면, 먼저 내용을 확인한 뒤 프로젝트 범위에 설치합니다. `gh skill`은 public preview이며, 오래된 GitHub CLI에는 없습니다.
+아래 명령은 **내 프로젝트의 루트 폴더**에서 실행합니다. 스킬 전체(`SKILL.md`와 `assets/templates/`)를 설치해야 다섯 문서를 `docs/`에 만들 수 있습니다. `npx skills` 방식은 전역 설치 없이 프로젝트의 스킬 폴더와 `skills-lock.json`만 만듭니다.
 
-```sh
-gh skill preview kimsanguine/ai-planning-playbook ai-project-planning
-gh skill install kimsanguine/ai-planning-playbook ai-project-planning --scope project
-```
-
-`npx`를 쓸 수 있다면 전역 설치 없이 다음 한 줄로 스킬을 추가할 수도 있습니다. 기본 익명 사용량 전송을 끄려면 앞의 환경 변수를 유지합니다.
+### Codex
 
 ```sh
 DISABLE_TELEMETRY=1 npx skills add kimsanguine/ai-planning-playbook --skill ai-project-planning --agent codex --yes --copy
 ```
 
-Claude Code를 쓴다면 `--agent codex`만 `--agent claude-code`로 바꿉니다. 이 명령은 프로젝트의 `.agents/skills/`와 `skills-lock.json`을 만듭니다.
+새 Codex 세션에서 다음처럼 요청합니다.
 
-Codex처럼 프로젝트의 `.agents/skills/`를 읽는 환경이나 위 명령을 제공하지 않는 환경에서는 아래 수동 설치를 씁니다. 설치한 뒤에는 새 에이전트 세션에서 `ai-project-planning`을 사용해 현재 업무 메모를 다섯 문서로 정리해 달라고 요청하세요.
+```text
+ai-project-planning 스킬을 사용해 아래 업무 메모를 docs/의 다섯 문서로 정리해 줘. 없는 사실은 미확인으로 남기고, 코드 구현은 하지 마.
+```
 
-스킬 폴더 전체를 복사해야 합니다. Codex의 프로젝트 범위는 `.agents/skills/`, Claude Code는 `.claude/skills/`입니다. 스킬은 `SKILL.md`와 `assets/templates/`를 함께 둬야 합니다.
+### Claude Code
+
+```sh
+DISABLE_TELEMETRY=1 npx skills add kimsanguine/ai-planning-playbook --skill ai-project-planning --agent claude-code --yes --copy
+```
+
+설치되면 `.claude/skills/ai-project-planning/`에 스킬과 템플릿이 생깁니다. 새 Claude Code 세션에서 Codex와 같은 첫 요청을 사용합니다.
+
+### Hermes
+
+먼저 원격 스킬 본문을 확인합니다.
+
+```sh
+hermes skills inspect https://raw.githubusercontent.com/kimsanguine/ai-planning-playbook/main/skills/ai-project-planning/SKILL.md
+```
+
+Hermes의 URL 설치는 현재 `SKILL.md`만 받아 템플릿 자산을 빠뜨리므로, 아래처럼 전체 폴더를 프로젝트의 `.agents/skills/`에 복사한 뒤 해당 프로젝트를 신뢰합니다.
 
 ```sh
 tmp_dir="$(mktemp -d)"
@@ -37,9 +50,14 @@ trap 'rm -rf "$tmp_dir"' EXIT
 git clone --depth 1 https://github.com/kimsanguine/ai-planning-playbook.git "$tmp_dir"
 mkdir -p .agents/skills
 cp -R "$tmp_dir/skills/ai-project-planning" .agents/skills/
+hermes skills trust .
+hermes skills list --source local
+hermes chat --in . --skills ai-project-planning
 ```
 
-Windows PowerShell에서는 다음을 사용합니다.
+마지막 명령으로 열린 Hermes 대화에 위의 첫 요청과 업무 메모를 입력합니다. Hermes는 프로젝트의 `.agents/skills/`를 신뢰해야 로컬 스킬을 읽습니다.
+
+Windows PowerShell에서 Hermes를 쓴다면 다음을 사용합니다.
 
 ```powershell
 $tempDir = Join-Path $env:TEMP "ai-planning-playbook-skill"
@@ -48,6 +66,18 @@ git clone --depth 1 https://github.com/kimsanguine/ai-planning-playbook.git $tem
 New-Item -ItemType Directory -Force .agents\skills
 Copy-Item -Recurse "$tempDir\skills\ai-project-planning" .agents\skills\
 Remove-Item -Recurse -Force $tempDir
+hermes skills trust .
+hermes skills list --source local
+hermes chat --in . --skills ai-project-planning
+```
+
+### 선택: GitHub CLI
+
+GitHub Copilot 또는 호환 에이전트에서 GitHub CLI 2.90.0 이상을 쓴다면, 먼저 내용을 확인한 뒤 프로젝트 범위에 설치할 수 있습니다. `gh skill`은 public preview입니다.
+
+```sh
+gh skill preview kimsanguine/ai-planning-playbook ai-project-planning
+gh skill install kimsanguine/ai-planning-playbook ai-project-planning --scope project
 ```
 
 에이전트가 별도 스킬 폴더를 지원하지 않으면 [SKILL.md](skills/ai-project-planning/SKILL.md)와 다섯 템플릿을 프로젝트에 함께 두고, 새 세션에서 먼저 읽게 합니다.
