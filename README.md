@@ -12,7 +12,7 @@
 
 ## Q. Claude Code·Codex·Hermes에 어떻게 설치하나요?
 
-아래 명령은 **내 프로젝트의 루트 폴더**에서 실행합니다. 먼저 `node --version`으로 Node.js `v22.12.0` 이상인지 확인하세요. Codex와 Claude Code 경로는 `npx`를 쓰므로 npm이 함께 필요하고, Hermes 경로는 Git도 필요합니다. 스킬 전체(`SKILL.md`와 `assets/templates/`)를 설치해야 다섯 문서를 `docs/`에 만들 수 있습니다. `npx skills` 방식은 전역 설치 없이 프로젝트의 스킬 폴더와 `skills-lock.json`만 만듭니다.
+아래 명령은 **내 프로젝트의 루트 폴더**에서 실행합니다. 먼저 `node --version`으로 Node.js `v22.12.0` 이상인지 확인하세요. Codex와 Claude Code 경로는 `npx`를 쓰므로 npm이 함께 필요하고, Hermes 경로는 Git도 필요합니다. 스킬 전체(`SKILL.md`와 `assets/templates/`)를 설치해야 다섯 문서를 `docs/`에 만들 수 있습니다. 템플릿은 `customer.md`, `prd.md`, `architecture.md`, `design.md`, `progress.md` 다섯 파일입니다. `npx skills` 방식은 전역 설치 없이 프로젝트의 스킬 폴더와 `skills-lock.json`만 만듭니다.
 
 ### Codex
 
@@ -30,6 +30,8 @@ npx skills add kimsanguine/ai-planning-playbook --skill ai-project-planning --ag
 ```
 
 새 Codex 세션에서 다음처럼 요청합니다.
+
+설치되면 `.agents/skills/ai-project-planning/`에 스킬과 템플릿이 생깁니다.
 
 ```text
 ai-project-planning 스킬을 사용해 아래 업무 메모를 docs/의 다섯 문서로 정리해 줘. 없는 사실은 미확인으로 남기고, 코드 구현은 하지 마.
