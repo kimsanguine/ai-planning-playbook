@@ -12,28 +12,42 @@
 
 ## Q. AI 에이전트에 스킬을 어떻게 설치하나요?
 
-`gh skill` 명령을 지원하는 GitHub CLI 환경에서는 프로젝트 범위에 다음 명령을 실행합니다.
+GitHub Copilot 또는 호환 에이전트에서 GitHub CLI 2.90.0 이상을 쓴다면, 먼저 내용을 확인한 뒤 프로젝트 범위에 설치합니다. `gh skill`은 public preview이며, 오래된 GitHub CLI에는 없습니다.
 
 ```sh
-gh skill install kimsanguine/ai-planning-playbook ai-project-planning --agent codex --scope project
+gh skill preview kimsanguine/ai-planning-playbook ai-project-planning
+gh skill install kimsanguine/ai-planning-playbook ai-project-planning --scope project
 ```
 
-다른 에이전트를 쓴다면 `--agent claude-code`처럼 해당 도구 이름을 지정합니다. 설치한 뒤에는 새 에이전트 세션에서 `ai-project-planning`을 사용해 현재 업무 메모를 다섯 문서로 정리해 달라고 요청하세요.
-
-`gh skill` 명령을 제공하지 않는 환경에서는 저장소를 복제한 뒤 `skills/ai-project-planning` 폴더 전체를 사용하는 에이전트의 프로젝트 스킬 폴더에 복사합니다. Codex의 일반적인 프로젝트 범위는 `.agents/skills/`, Claude Code는 `.claude/skills/`입니다. 스킬은 `SKILL.md`와 `assets/templates/`를 함께 둬야 합니다.
+`npx`를 쓸 수 있다면 전역 설치 없이 다음 한 줄로 스킬을 추가할 수도 있습니다. 기본 익명 사용량 전송을 끄려면 앞의 환경 변수를 유지합니다.
 
 ```sh
-git clone --depth 1 https://github.com/kimsanguine/ai-planning-playbook.git /tmp/ai-planning-playbook
+DISABLE_TELEMETRY=1 npx skills add kimsanguine/ai-planning-playbook --skill ai-project-planning --agent codex --yes --copy
+```
+
+Claude Code를 쓴다면 `--agent codex`만 `--agent claude-code`로 바꿉니다. 이 명령은 프로젝트의 `.agents/skills/`와 `skills-lock.json`을 만듭니다.
+
+Codex처럼 프로젝트의 `.agents/skills/`를 읽는 환경이나 위 명령을 제공하지 않는 환경에서는 아래 수동 설치를 씁니다. 설치한 뒤에는 새 에이전트 세션에서 `ai-project-planning`을 사용해 현재 업무 메모를 다섯 문서로 정리해 달라고 요청하세요.
+
+스킬 폴더 전체를 복사해야 합니다. Codex의 프로젝트 범위는 `.agents/skills/`, Claude Code는 `.claude/skills/`입니다. 스킬은 `SKILL.md`와 `assets/templates/`를 함께 둬야 합니다.
+
+```sh
+tmp_dir="$(mktemp -d)"
+trap 'rm -rf "$tmp_dir"' EXIT
+git clone --depth 1 https://github.com/kimsanguine/ai-planning-playbook.git "$tmp_dir"
 mkdir -p .agents/skills
-cp -R /tmp/ai-planning-playbook/skills/ai-project-planning .agents/skills/
+cp -R "$tmp_dir/skills/ai-project-planning" .agents/skills/
 ```
 
 Windows PowerShell에서는 다음을 사용합니다.
 
 ```powershell
-git clone --depth 1 https://github.com/kimsanguine/ai-planning-playbook.git "$env:TEMP\ai-planning-playbook"
+$tempDir = Join-Path $env:TEMP "ai-planning-playbook-skill"
+Remove-Item -Recurse -Force $tempDir -ErrorAction SilentlyContinue
+git clone --depth 1 https://github.com/kimsanguine/ai-planning-playbook.git $tempDir
 New-Item -ItemType Directory -Force .agents\skills
-Copy-Item -Recurse "$env:TEMP\ai-planning-playbook\skills\ai-project-planning" .agents\skills\
+Copy-Item -Recurse "$tempDir\skills\ai-project-planning" .agents\skills\
+Remove-Item -Recurse -Force $tempDir
 ```
 
 에이전트가 별도 스킬 폴더를 지원하지 않으면 [SKILL.md](skills/ai-project-planning/SKILL.md)와 다섯 템플릿을 프로젝트에 함께 두고, 새 세션에서 먼저 읽게 합니다.
@@ -43,7 +57,7 @@ Copy-Item -Recurse "$env:TEMP\ai-planning-playbook\skills\ai-project-planning" .
 텍스트 편집기와 공개해도 되는 업무 메모면 충분합니다. AI 계정, 유료 모델, API 키, 개발 도구 없이 수동으로 끝낼 수 있습니다.
 
 1. 스킬을 설치하거나 [SKILL.md](skills/ai-project-planning/SKILL.md)를 엽니다. AI 계정, 유료 모델, API 키, 개발 도구 없이도 템플릿을 직접 채울 수 있습니다.
-2. 새 프로젝트라면 [templates](templates)의 `customer.md`, `prd.md`, `architecture.md`, `design.md`, `progress.md`를 자기 프로젝트 폴더에 복사합니다. 기존 파일이 있으면 먼저 읽고 필요한 절만 병합하세요. 회사 양식이 필수라면 그대로 유지하고 다섯 역할이 있는 위치를 연결합니다.
+2. 새 프로젝트라면 [templates](templates)의 `customer.md`, `prd.md`, `architecture.md`, `design.md`, `progress.md`를 자기 프로젝트의 `docs/`에 복사합니다. 기존 파일이 있으면 먼저 읽고 필요한 절만 병합하세요. 회사 양식이 필수라면 그대로 유지하고 다섯 역할이 있는 위치를 연결합니다.
 3. 오늘 막힌 선택 하나를 정합니다. 예를 들면 “작업자가 고른 한 구간의 재시도를 허용할까?”입니다. `progress.md`에 질문, owner, 오늘 날짜, 7일 뒤 review를 적습니다.
 4. [핸드북 2쪽](https://habix.ai/playbook/ai-planning/diagnose-the-block)과 [5쪽](https://habix.ai/playbook/ai-planning/four-files)을 읽고 필요한 질문 한두 개에 답합니다. 수동으로 하려면 [24쪽의 최소 경로](https://habix.ai/playbook/ai-planning/own-work)를 따라가세요.
 5. 다섯 파일을 저장하고 닫았다 다시 엽니다. 같은 자료 ID, Q-ID, 장면 ID, DEC-ID로 선택과 이유가 연결되는지 [결정 체크리스트](docs/decision-checklist.md)로 확인합니다.
@@ -64,11 +78,11 @@ flowchart LR
 
 | 파일 | 저장할 내용 | 사람이 확인할 것 |
 | --- | --- | --- |
-| [customer.md](templates/customer.md) | 최근 사건, 현재 대안, 출처와 가설 | 자료가 실제로 말한 것과 모르는 것 |
-| [prd.md](templates/prd.md) | 목표, 포함과 제외, 품질 기준 | 이번에 바꿀 사용자 결과와 감수할 손실 |
-| [architecture.md](templates/architecture.md) | 입력과 처리, 코드와 사람 책임, 복구 | 어디까지 실행할 수 있는가 |
-| [design.md](templates/design.md) | 사용자 행동, 결과 표현, 경계 장면 | 사용자가 무엇을 보고 다음 행동을 아는가 |
-| [progress.md](templates/progress.md) | 선택과 포기 이유, 실제 결과, 7일 리뷰 | 무엇을 보고 유지하거나 바꿀 것인가 |
+| [docs/customer.md](templates/customer.md) | 최근 사건, 현재 대안, 출처와 가설 | 자료가 실제로 말한 것과 모르는 것 |
+| [docs/prd.md](templates/prd.md) | 목표, 포함과 제외, 품질 기준 | 이번에 바꿀 사용자 결과와 감수할 손실 |
+| [docs/architecture.md](templates/architecture.md) | 입력과 처리, 코드와 사람 책임, 복구 | 어디까지 실행할 수 있는가 |
+| [docs/design.md](templates/design.md) | 사용자 행동, 결과 표현, 경계 장면 | 사용자가 무엇을 보고 다음 행동을 아는가 |
+| [docs/progress.md](templates/progress.md) | 선택과 포기 이유, 실제 결과, 7일 리뷰 | 무엇을 보고 유지하거나 바꿀 것인가 |
 
 ## Q. 지금 상황에서는 무엇부터 하나요?
 
@@ -87,7 +101,7 @@ flowchart LR
 | --- | --- |
 | AI 제품을 기획하는 PM, 서비스 기획자 | 고객 근거, 선택 이유, 품질과 비용을 연결할 때 씁니다 |
 | AI 없이 판단을 정리하려는 실무자 | 질문에 직접 답하고 다섯 문서에 저장할 수 있습니다 |
-| 이미 회사의 기획 양식과 운영 기록이 있다 | 새 파일로 교체하지 말고 네 역할에 해당하는 절만 연결합니다 |
+| 이미 회사의 기획 양식과 운영 기록이 있다 | 새 파일로 교체하지 말고 다섯 역할에 해당하는 절만 연결합니다 |
 | 선택이 끝난 단순 문구 수정이나 일회성 작업이다 | 다섯 문서 전체를 새로 만드는 것은 과할 수 있습니다 |
 | 고객 인터뷰나 실행 결과 자체가 필요하다 | 이 키트는 확인할 질문과 다음 행동을 돕습니다. 실제 조사를 대신하지 않습니다 |
 

@@ -22,7 +22,7 @@
 
 ## 개발 폴더 책임 예
 
-프로젝트 루트: customer.md, prd.md, architecture.md, design.md, progress.md.
+프로젝트 문서: docs/customer.md, docs/prd.md, docs/architecture.md, docs/design.md, docs/progress.md.
 
 | 폴더 | 책임 | 이번 과제의 내용 |
 |---|---|---|

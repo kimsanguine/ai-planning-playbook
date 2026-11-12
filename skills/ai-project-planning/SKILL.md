@@ -9,22 +9,22 @@ Use this skill to turn one work memo into a project context that a person and an
 
 ## Read first
 
-1. Read any existing `customer.md`, `prd.md`, `architecture.md`, `design.md`, and `progress.md` before proposing changes.
+1. Read any existing `docs/customer.md`, `docs/prd.md`, `docs/architecture.md`, `docs/design.md`, and `docs/progress.md` before proposing changes. If a legacy project keeps these at its root, preserve that layout rather than moving files as part of a planning task.
 2. Treat the supplied memo, interview notes, and observed results as the only evidence. Mark missing evidence as `미확인` and write the next confirmation action instead of inventing customer claims, outcomes, or metrics.
 3. Keep personal data, private links, secrets, and unapproved customer material out of the documents.
 4. A person, not the agent, confirms scope, quality thresholds, external delivery, spending, deletion, and production release.
 
 ## Create or update the five documents
 
-For a new project, copy all files in [assets/templates](assets/templates) into the project root. For an existing project, preserve prior records and change only relevant sections.
+For a new project, copy all files in [assets/templates](assets/templates) into `docs/`. For an existing project, preserve prior records and change only relevant sections.
 
 | File | Responsibility | Read or update when |
 | --- | --- | --- |
-| `customer.md` | user evidence, current alternatives, hypotheses | an observed need or source changes |
-| `prd.md` | goal, scope, exclusions, quality thresholds | a person changes what the project should do |
-| `architecture.md` | input, processing responsibility, human review, recovery | a tool, data boundary, or failure path changes |
-| `design.md` | user action, visible result, states, and prototype behavior | a user flow or result presentation changes |
-| `progress.md` | the decision, reason, actual result, and next review | a decision or observed result is recorded |
+| `docs/customer.md` | user evidence, current alternatives, hypotheses | an observed need or source changes |
+| `docs/prd.md` | goal, scope, exclusions, quality thresholds | a person changes what the project should do |
+| `docs/architecture.md` | input, processing responsibility, human review, recovery | a tool, data boundary, or failure path changes |
+| `docs/design.md` | user action, visible result, states, and prototype behavior | a user flow or result presentation changes |
+| `docs/progress.md` | the decision, reason, actual result, and next review | a decision or observed result is recorded |
 
 Keep the links between documents explicit. `customer.md` evidence should support `prd.md` quality conditions; `architecture.md` and `design.md` should reference the applicable PRD conditions; `progress.md` should record why the human accepted, rejected, narrowed, or paused the change.
 
