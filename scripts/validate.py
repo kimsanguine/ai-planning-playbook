@@ -29,9 +29,21 @@ def validate(artifacts=False):
         errors.append('Expected the 10 unchanged prompt pairs.')
     if len(slugs) != 28 or len(set(slugs)) != 28:
         errors.append('Expected 28 distinct chapter slugs.')
-    for folder in ['templates', 'examples/video-localization']:
-        if {p.name for p in public_inputs(ROOT) if p.parent == ROOT / folder and p.is_file()} != {'customer.md', 'prd.md', 'architecture.md', 'progress.md'}:
-            errors.append(f'{folder}: expected exactly four project documents.')
+    expected_documents = {'customer.md', 'prd.md', 'architecture.md', 'design.md', 'progress.md'}
+    if {p.name for p in public_inputs(ROOT) if p.parent == ROOT / 'templates' and p.is_file()} != expected_documents:
+        errors.append('templates: expected exactly five project documents.')
+    if {p.name for p in public_inputs(ROOT) if p.parent == ROOT / 'examples/video-localization' and p.is_file()} != {'customer.md', 'prd.md', 'architecture.md', 'progress.md'}:
+        errors.append('examples/video-localization: expected exactly four comparison documents.')
+    skill = ROOT / 'skills/ai-project-planning'
+    skill_manifest = skill / 'SKILL.md'
+    if not skill_manifest.is_file():
+        errors.append('skills/ai-project-planning: missing SKILL.md.')
+    else:
+        manifest = skill_manifest.read_text()
+        if not re.match(r'^---\nname: ai-project-planning\ndescription: .+\n---\n', manifest):
+            errors.append('skills/ai-project-planning: invalid SKILL.md front matter.')
+    if {p.name for p in (skill / 'assets/templates').glob('*.md')} != expected_documents:
+        errors.append('skills/ai-project-planning: expected five bundled template documents.')
     md_files = [p for p in public_inputs(ROOT) if p.suffix == '.md']
     count = 0
     for path in md_files:

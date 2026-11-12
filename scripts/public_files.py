@@ -1,4 +1,4 @@
-"""The exact public inputs shared by building and validation, including ZIP use."""
+"""The exact public inputs shared by building and validation."""
 from pathlib import Path
 
 PUBLIC_INPUTS = (
@@ -33,8 +33,15 @@ PUBLIC_INPUTS = (
     'scripts/validate.py',
     'templates/architecture.md',
     'templates/customer.md',
+    'templates/design.md',
     'templates/prd.md',
     'templates/progress.md',
+    'skills/ai-project-planning/SKILL.md',
+    'skills/ai-project-planning/assets/templates/architecture.md',
+    'skills/ai-project-planning/assets/templates/customer.md',
+    'skills/ai-project-planning/assets/templates/design.md',
+    'skills/ai-project-planning/assets/templates/prd.md',
+    'skills/ai-project-planning/assets/templates/progress.md',
 )
 PUBLIC_OUTPUTS = ('dist/handbook.pdf', 'dist/chapters.json')
 

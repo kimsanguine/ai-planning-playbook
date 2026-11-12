@@ -1,5 +1,11 @@
 # 변경 이력
 
+## 2026-11-12
+
+- 다섯 문서(customer, prd, architecture, design, progress)를 함께 읽고 갱신하는 `ai-project-planning` Agent Skill을 추가했습니다.
+- 스킬 설치 안내와 수동 설치 경로를 README에 추가하고, 전체 키트 ZIP 다운로드 안내를 제거했습니다.
+- 기존 cases와 examples는 비교용 자료로 유지했으며, 다섯 번째 설계 문서 템플릿과 스킬 자산 검사를 추가했습니다.
+
 ## 2026-11-10
 
 - 한국어 핸드북 28쪽과 입력 양식, 채운 실행예 10쌍을 공개 키트로 구성했습니다.

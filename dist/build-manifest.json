@@ -212,20 +212,20 @@
       "sha256": "f1bb8745e827993437963d477a5ee256ca6a098946da514125ce8c0373fc0b51"
     },
     "CHANGELOG.md": {
-      "bytes": 608,
-      "sha256": "73489e9170b486a633e4a7af3ce5df97c9bba835bccb3056ae1314a021f5c93b"
+      "bytes": 1061,
+      "sha256": "bb206aad36fbb4c28385d988d4a0c4ed488bd67138874c0841aa62b83b968eeb"
     },
     "CONTRIBUTING.md": {
       "bytes": 1920,
       "sha256": "9ab831befb2a4bf5ac22357aefc3c0d22429657699e7adbea3c1aa6ade957250"
     },
     "LICENSE": {
-      "bytes": 1578,
-      "sha256": "50991f33db42980c32a210506422b61ae2813fbee2de3cd4674068c33fa5f3f1"
+      "bytes": 1581,
+      "sha256": "846e22be3eaa92b160570a65a2c1c48c2ab71f89d47ef16b256a65ddf77c1a6c"
     },
     "README.md": {
-      "bytes": 7198,
-      "sha256": "0c91db4be5d9f3d62ebc545926752ea9b1de56c07c43991b1616ef63a5350f36"
+      "bytes": 9592,
+      "sha256": "f3b077f5a2c29a03ffd91522b9148dd5fa656db29b9cde36577812dd3cc30e30"
     },
     "assets/fonts/OFL.txt": {
       "bytes": 4816,
@@ -308,20 +308,24 @@
       "sha256": "14d9478459596540468988f5cbe7309caeabda4122929f1b48f3f50e68602968"
     },
     "scripts/public_files.py": {
-      "bytes": 1420,
-      "sha256": "e2d418baa28f4fdc6850049e9b113546e2f906ce152702e49add08f3112de13b"
+      "bytes": 1783,
+      "sha256": "b35506e36139397a2bc5a74cfd628c24bb17a35ac383662ed74cfbd86032f8ac"
     },
     "scripts/validate.py": {
-      "bytes": 5877,
-      "sha256": "3184548718a638f716eedaf9b70c19c34c6177ddfc24a8d11bcc63ae0480ec89"
+      "bytes": 6762,
+      "sha256": "5ff96de64f278af6e34555d700044677fffd6893177de5649c70e2b3ce592444"
     },
     "templates/architecture.md": {
-      "bytes": 2656,
-      "sha256": "81dcc32dc1b30ee00a26b3832467e2755fcc5b08e8ee7cfc6b17689c6652e135"
+      "bytes": 2667,
+      "sha256": "ef71ecd7cec0dafc3f10ee5e78710b7223ca35a9e1574ca32b1b57157faf5baa"
     },
     "templates/customer.md": {
       "bytes": 3036,
       "sha256": "8f9f3c5e702245f719da61fc4e00716b2514de2ab9a7257995289a6e4e8c4aea"
+    },
+    "templates/design.md": {
+      "bytes": 2449,
+      "sha256": "af7e2de7570b4966904c6f60da1195df8d621322a4be858184bbe0145c97fc9a"
     },
     "templates/prd.md": {
       "bytes": 2910,
@@ -331,9 +335,33 @@
       "bytes": 4416,
       "sha256": "56a86902ea11fcfd23b4a3941ce394603dd11b2dae2e55a00c6c77af56715f1c"
     },
+    "skills/ai-project-planning/SKILL.md": {
+      "bytes": 4177,
+      "sha256": "beef6446f0bf08d53276a429b7bec5f0788a155ab502655cb59e9e5c0c5cb1ac"
+    },
+    "skills/ai-project-planning/assets/templates/architecture.md": {
+      "bytes": 2667,
+      "sha256": "ef71ecd7cec0dafc3f10ee5e78710b7223ca35a9e1574ca32b1b57157faf5baa"
+    },
+    "skills/ai-project-planning/assets/templates/customer.md": {
+      "bytes": 3036,
+      "sha256": "8f9f3c5e702245f719da61fc4e00716b2514de2ab9a7257995289a6e4e8c4aea"
+    },
+    "skills/ai-project-planning/assets/templates/design.md": {
+      "bytes": 2449,
+      "sha256": "af7e2de7570b4966904c6f60da1195df8d621322a4be858184bbe0145c97fc9a"
+    },
+    "skills/ai-project-planning/assets/templates/prd.md": {
+      "bytes": 2910,
+      "sha256": "13d52b7c07fdfcf31371453ee1f56303666f98a7c8f6ff0922e759f6d37e017a"
+    },
+    "skills/ai-project-planning/assets/templates/progress.md": {
+      "bytes": 4416,
+      "sha256": "56a86902ea11fcfd23b4a3941ce394603dd11b2dae2e55a00c6c77af56715f1c"
+    },
     "dist/handbook.pdf": {
       "bytes": 3085900,
-      "sha256": "79b0c41a2ab890a79e7e450746ef6db0c7373532cf35cada880c84e193d6d977"
+      "sha256": "a02f826eae73e54024c98b5c94190dfa4e19c7054553f03b2edc1070a0cb8882"
     },
     "dist/chapters.json": {
       "bytes": 62383,
