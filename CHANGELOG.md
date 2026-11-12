@@ -4,6 +4,7 @@
 
 - 다섯 문서(customer, prd, architecture, design, progress)를 함께 읽고 갱신하는 `ai-project-planning` Agent Skill을 추가했습니다.
 - 스킬 설치 안내와 수동 설치 경로를 README에 추가하고, 전체 키트 ZIP 다운로드 안내를 제거했습니다.
+- `npx skills add`로 Codex 프로젝트 스킬을 복사 설치하는 실제 명령과 GitHub CLI 2.90.0 이상용 설치·미리보기 경로를 확인했습니다. 새 프로젝트의 다섯 문서는 `docs/`에 둡니다.
 - 기존 cases와 examples는 비교용 자료로 유지했으며, 다섯 번째 설계 문서 템플릿과 스킬 자산 검사를 추가했습니다.
 
 ## 2026-11-10
